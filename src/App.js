@@ -82,27 +82,28 @@ export default function App() {
                     </div>
                 </div>
             </div>
-
         )
     }
 
 
     function changeUser(changeAction) {
+        const tempCurrentUser = currentUser.currentUserId +1
+        
         if (
-            changeAction === "next" &&
-            currentUser.currentUserId !== userData.length
+            changeAction === "next" && tempCurrentUser < userData.users.length 
         ) {
             const tempUser = {
                 currentUserId: currentUser.currentUserId + 1,
                 CUser: userData.users[currentUser.currentUserId + 1]
             };
             setCurrentUser(tempUser);
-        } else if (changeAction === "previous" && currentUser.currentUserId !== 0) {
+        } 
+        else if (changeAction === "previous" && currentUser.currentUserId > 0) {
             const temp_User = {
                 currentUserId: currentUser.currentUserId - 1,
                 CUser: userData.users[currentUser.currentUserId - 1]
             };
-            setCurrentUser(temp_User);
+            setCurrentUser(temp_User);            
         }
     }
 
