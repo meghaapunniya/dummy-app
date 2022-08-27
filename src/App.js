@@ -23,8 +23,11 @@ export default function App() {
             setCurrentUser(UserObj);
             setUserData(response.data);
             console.log(response.data);
+        
+
+            
         });
-    }, []);
+        }, []);
 
     React.useEffect(() => {
         if (userData === null) {
